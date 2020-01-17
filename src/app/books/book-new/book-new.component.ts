@@ -11,6 +11,7 @@ import { IBook } from '../shared/ibook.interface';
 })
 export class BookNewComponent implements OnInit {
   newBookForm: FormGroup;
+  private saved = false;
   constructor(
     private service: BooksService,
     private formbuilder: FormBuilder,
@@ -35,10 +36,13 @@ export class BookNewComponent implements OnInit {
 
   saveBook() {
     console.log(new Date());
-    this.service
-      .createBook(this.newBookForm.value)
-      .subscribe((b: IBook) =>
-        this.router.navigate(['..', b.isbn], { relativeTo: this.route })
-      );
+    this.service.createBook(this.newBookForm.value).subscribe((b: IBook) => {
+      this.saved = true;
+      this.router.navigate(['..', b.isbn], { relativeTo: this.route });
+    });
+  }
+
+  isSaved(): boolean {
+    return this.saved || !this.newBookForm.dirty;
   }
 }
