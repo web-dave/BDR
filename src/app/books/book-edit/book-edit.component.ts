@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { IBook } from '../shared/ibook.interface';
 import { BooksService } from '../shared/books.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'hannes-book-edit',
@@ -12,6 +12,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class BookEditComponent implements OnInit, OnDestroy {
   book: IBook;
+
   sub: Subscription = new Subscription();
   constructor(
     private service: BooksService,
@@ -25,6 +26,9 @@ export class BookEditComponent implements OnInit, OnDestroy {
         .pipe(switchMap(p => this.service.getBook(p.isbn)))
         .subscribe(b => (this.book = b))
     );
+    // fromEvent(document.querySelector('[id="title"]'), 'input').subscribe(m =>
+    //   console.log(m)
+    // );
   }
 
   save(book) {
@@ -47,5 +51,9 @@ export class BookEditComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.sub.unsubscribe();
+  }
+
+  search(n) {
+    console.log(n);
   }
 }
