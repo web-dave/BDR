@@ -1,0 +1,24 @@
+<div class="panel panel-default" *ngIf="book$ | async as book">
+  <div class="panel-heading">
+    <h3>{{ book.title }}</h3>
+    ({{ book.isbn }})
+  </div>
+  <div class="panel-body" [hannesOrderBtn]="book">
+    <p>
+      {{ book.abstract }}
+      <!-- <span class="badge">Seitenzahl: {{ book.numPages }}</span> -->
+      <br />
+      <span class="badge">{{
+        book.numPages | pages: 'Anzahl an Seiten in diesem Buch'
+      }}</span>
+    </p>
+    <p>{{ book.publisher.name }} ({{ book.publisher.url }})</p>
+  </div>
+  <div class="panel-footer">{{ book.author }}</div>
+  <div class="btn btn-info" [routerLink]="['..']">X</div>
+  <div class="btn btn-danger" [routerLink]="['edit']">Edit</div>
+  <hr />
+  <!-- <pre>{{ book | json }}</pre> -->
+</div>
+<h6>{{ zahl | pages }}</h6>
+<hr />

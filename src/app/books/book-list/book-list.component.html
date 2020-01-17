@@ -1,0 +1,13 @@
+<h4>Book List</h4>
+<a routerLink="new" class="btn btn-secondary">new</a>
+<ul *ngIf="book$ | async; else noBooks">
+  <hannes-preview
+    *ngFor="let book of book$ | async"
+    [book]="book"
+    (bookselected)="selectBook($event)"
+  ></hannes-preview>
+</ul>
+
+<ng-template #noBooks>
+  <h5>No Books found</h5>
+</ng-template>
