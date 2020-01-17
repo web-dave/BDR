@@ -1,4 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { BooksService } from '../shared/books.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { retryWhen, delay, tap } from 'rxjs/operators';
@@ -12,6 +17,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class BookListComponent implements OnInit, OnDestroy {
   book$: Observable<IBook[]>;
+  books: IBook[];
+  i = 0;
 
   // i = 0;
   // ob = new BehaviorSubject(this.i);
@@ -23,6 +30,13 @@ export class BookListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.book$ = this.service.getBooks();
+    this.book$.subscribe(b => (this.books = b));
+    setInterval(() => {
+      this.i++;
+      const b = { ...this.books[0], title: 'Hurz ' + this.i };
+      // this.books[0] = b;
+      this.books[0].title = 'Hurz ' + this.i;
+    }, 2000);
   }
   ngOnDestroy() {
     console.log('Tschö');

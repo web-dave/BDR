@@ -9,7 +9,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "viewEncapsulation": "None"
+          "viewEncapsulation": "None",
+          "changeDetection": "OnPush"
         }
       },
       "sourceRoot": "src",
@@ -23,7 +24,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
@@ -44,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -62,6 +62,12 @@
               ]
             },
             "alpha": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
