@@ -7,10 +7,10 @@ describe('PagesPipe', () => {
   });
   it('should return "4: Affen"', () => {
     const pipe = new PagesPipe();
-    expect(pipe.transform(4, 'Affen')).toBeTruthy('4: Affen');
+    expect(pipe.transform(4, 'Affen')).toBe('Affen: 4');
   });
   it('should return "42: Hurz"', () => {
     const pipe = new PagesPipe();
-    expect(pipe.transform(42)).toBeTruthy('42: Hurz');
+    expect(pipe.transform(42)).toBe('Hurz: 42');
   });
 });

@@ -10,7 +10,7 @@ class SandboxComponent {
   book = mockBooks[0];
 }
 
-fdescribe('OrderBtnDirective', () => {
+describe('OrderBtnDirective', () => {
   let comp: SandboxComponent;
   let fixture: ComponentFixture<SandboxComponent>;
   let view;
