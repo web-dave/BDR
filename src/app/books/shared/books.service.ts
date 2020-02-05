@@ -10,7 +10,7 @@ import { IBook } from './ibook.interface';
 })
 export class BooksService {
   // private root = 'http://localhost:4730/books/';
-  private root = restroot;
+  public root = restroot;
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<IBook[]> {
