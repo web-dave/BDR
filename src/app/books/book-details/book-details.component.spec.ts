@@ -22,7 +22,7 @@ describe('BookDetailsComponent', () => {
       providers: [
         {
           provide: ActivatedRoute,
-          useValue: { params: of({ isbn: '123' }), snapShot: {} }
+          useValue: { params: of({ isbn: '123' }), snapshot: {} }
         }
       ]
     }).compileComponents();
