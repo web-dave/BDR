@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { TopNavComponent } from './top-nav.component';
 
@@ -8,9 +9,9 @@ describe('TopNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopNavComponent ]
-    })
-    .compileComponents();
+      declarations: [TopNavComponent],
+      imports: [RouterTestingModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
