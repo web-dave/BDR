@@ -6,6 +6,13 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+    return element(by.css('hannes-root h2')).getText() as Promise<string>;
+  }
+  goToBooks() {
+    // return browser.get(browser.baseUrl + '/books');
+    return element(by.css('hannes-top-nav #books')).click();
+  }
+  getElements() {
+    return element(by.css('hannes-preview'));
   }
 }

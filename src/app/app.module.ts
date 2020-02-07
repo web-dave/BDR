@@ -13,14 +13,7 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, TopNavComponent, WelcomeComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production
-    })
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -32,3 +25,7 @@ import { environment } from '../environments/environment';
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+// ServiceWorkerModule.register('ngsw-worker.js', {
+//   enabled: environment.production
+// })
