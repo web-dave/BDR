@@ -8,7 +8,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorService } from './error.service';
 import { PreloadDelayed } from './shared/preload-delayed';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({

@@ -9,11 +9,17 @@ DMh9dkzm1cK2XDWyuaEDIywp7aOUR1X9RQdykJiNhCw
 
 =======================================
 
-web-push send-notification --payload="Maon BDR" --endpoint="https://fcm.googleapis.com/fcm/send/d0QqoZIIrpo:APA91bE1TNAYy4igPowRkolQhPAQRJf-YDy3uXlxvulSbuwJw7MI83BNazPD0c2YshF0r0zFkzn4qcLkNHYWsM59MzVndm9MIlf4sY22w0b4NvXuLqpX5JzTXtxOR9wg_MbsjUKqhMT_" --key="BDsmtYeZ8ST9z8maDoAPTJ6oxYoW5lotgw9Uv42bo1_uaZRhIDGciIkgi_1Nmr6Np5uYS9V-17pmicJF9_0s6WI" --auth="ueu2PLdJNHXnGX5ONRczew" --vapid-subject="https://webdave.de" --vapid-pubkey=BKhvsY9s0FtnypI57GdBW0oWngy0k9CcRCJ8xhD4hIgp29Dku3cs6_4WVie95v2BPVw_4UMxqbJVP2ZefTmlOOQ --vapid-pvtkey=DMh9dkzm1cK2XDWyuaEDIywp7aOUR1X9RQdykJiNhCw
+web-push send-notification --payload='{"notification":{"title":"Angular News","body":"Newsletter Available!","icon":"assets/book-monkey.png"}}' --endpoint="https://fcm.googleapis.com/fcm/send/c356T0FOy0Y:APA91bFWqbWNqDLDOuAKo9P4PwMlGD9vKQiXodFWm46eT-mB3BII9agEt6hF_xkUGB7NPa1XeNrvGuLpBiOJi0hGyLamy9Rn1SttgJi1FtQcr9MZhg_iQJLye8Oe7gC4QkaeNv5lFjSN" --key="BEX0K3IHX10zCgpTb7vCfaHbyeit_2vGUV9zPK7sEeQp5SfUz_aWiDabe3IjXuRNtdlt1TcaHjLKJ4lftIxumiU" --auth="y3zrMFvz_DMSjP79QDrE8Q" --vapid-subject="https://webdave.de" --vapid-pubkey=BKhvsY9s0FtnypI57GdBW0oWngy0k9CcRCJ8xhD4hIgp29Dku3cs6_4WVie95v2BPVw_4UMxqbJVP2ZefTmlOOQ --vapid-pvtkey=DMh9dkzm1cK2XDWyuaEDIywp7aOUR1X9RQdykJiNhCw
 
-endpoint:"https://fcm.googleapis.com/fcm/send/d0QqoZIIrpo:APA91bE1TNAYy4igPowRkolQhPAQRJf-YDy3uXlxvulSbuwJw7MI83BNazPD0c2YshF0r0zFkzn4qcLkNHYWsM59MzVndm9MIlf4sY22w0b4NvXuLqpX5JzTXtxOR9wg_MbsjUKqhMT_"
-p256ph:"BDsmtYeZ8ST9z8maDoAPTJ6oxYoW5lotgw9Uv42bo1_uaZRhIDGciIkgi_1Nmr6Np5uYS9V-17pmicJF9_0s6WI"
-auth: "ueu2PLdJNHXnGX5ONRczew"
+
+web-push send-notification --payload="{\"notification\":{\"title\":\"Angular News\",\"body\":\"Newsletter Available!\",\"icon\":\"assets/images.png\"}}" --endpoint="https://fcm.googleapis.com/fcm/send/c356T0FOy0Y:APA91bFWqbWNqDLDOuAKo9P4PwMlGD9vKQiXodFWm46eT-mB3BII9agEt6hF_xkUGB7NPa1XeNrvGuLpBiOJi0hGyLamy9Rn1SttgJi1FtQcr9MZhg_iQJLye8Oe7gC4QkaeNv5lFjSN" --key="BEX0K3IHX10zCgpTb7vCfaHbyeit_2vGUV9zPK7sEeQp5SfUz_aWiDabe3IjXuRNtdlt1TcaHjLKJ4lftIxumiU" --auth="y3zrMFvz_DMSjP79QDrE8Q" --vapid-subject="https://webdave.de" --vapid-pubkey=BKhvsY9s0FtnypI57GdBW0oWngy0k9CcRCJ8xhD4hIgp29Dku3cs6_4WVie95v2BPVw_4UMxqbJVP2ZefTmlOOQ --vapid-pvtkey=DMh9dkzm1cK2XDWyuaEDIywp7aOUR1X9RQdykJiNhCw
+
+endpoint:"https://fcm.googleapis.com/fcm/send/c356T0FOy0Y:APA91bFWqbWNqDLDOuAKo9P4PwMlGD9vKQiXodFWm46eT-mB3BII9agEt6hF_xkUGB7NPa1XeNrvGuLpBiOJi0hGyLamy9Rn1SttgJi1FtQcr9MZhg_iQJLye8Oe7gC4QkaeNv5lFjSN"
+p256ph:"BEX0K3IHX10zCgpTb7vCfaHbyeit_2vGUV9zPK7sEeQp5SfUz_aWiDabe3IjXuRNtdlt1TcaHjLKJ4lftIxumiU"
+auth: "y3zrMFvz_DMSjP79QDrE8Q"
+
+
+'{"notification":{"title":"Angular News","body":"Newsletter Available!","icon":"assets/book-monkey.png"}}'
 
 "{
     "endpoint":"https://fcm.googleapis.com/fcm/send/fzpKdwDDxkM:APA91bHWmOgVLO0Q2tDIrcwk0Gik8U0oYflvQikAQwSqihsNDoTOQWf5yguOBRjtDGRjdLaYuF4-_v49vQpYRCr8PtvLTn3GmnsJItSA2F_G17aYYebcM9CdDSWdVVjEy00IA0I_7cd2",
